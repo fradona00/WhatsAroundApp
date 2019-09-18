@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Drop Shadow Stack -->
+    <item>
+        <shape>
+            <padding android:right="7px" android:bottom="7px" android:left="7px" />
+            <solid android:color="#02000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="6px" android:bottom="6px" android:left="6px"/>
+            <solid android:color="#05000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="5px" android:bottom="5px" android:left="5px"/>
+            <solid android:color="#10000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="4px" android:bottom="4px" android:left="4px"/>
+            <solid android:color="#15000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="3px" android:bottom="3px" android:left="3px"/>
+            <solid android:color="#20000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="2px" android:bottom="2px" android:left="2px"/>
+            <solid android:color="#25000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding  android:right="1px" android:bottom="1px" android:left="1px"/>
+            <solid android:color="#30000000" />
+            <corners android:radius="100dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"/>
+        </shape>
+    </item>
+
+    <!-- Background -->
+    <item>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners
+        android:topRightRadius="0dp"
+        android:topLeftRadius="0dp"
+        android:radius="100dp"
+        />
+
+    <gradient
+        android:angle="45"
+        android:endColor="#ffffff"
+        android:startColor="#ffffff"
+        android:type="linear" />
+
+    <!--If your shape requires only one solid color-->
+    <!--<solid
+        android:color="#FFFFFF" />-->
+
+    <size
+        android:width="200dp"
+        android:height="120dp" />
+
+    <!--Use android:dashWidth="2dp" and android:dashGap="2dp"
+    to add dashes to your stroke-->
+
+
+    <!--If you want to add padding-->
+    <!-- <padding
+         android:left="10dp"
+         android:top="20dp"
+         android:right="40dp"
+         android:bottom="8dp" />-->
+
+</shape>
+    </item>
+</layer-list>
