@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -12,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout btnt,btnl,btnr;
     private SelectFragment fragment;
     private Boolean isFragmentOn=false;
+    private Button selectbtn;
+    private Animation rotation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         btnt=findViewById(R.id.topbutton);
         btnl=findViewById(R.id.leftbutton);
         btnr=findViewById(R.id.rightbutton);
+        selectbtn=findViewById(R.id.selectbtn);
+
+        rotation= AnimationUtils.loadAnimation(selectbtn.getContext(),R.anim.selectanim);
 
         btnt.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -48,11 +57,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSelectBtnClick(View v){
+        selectbtn.startAnimation(rotation);
         if (!isFragmentOn)
         {
             fragment=new SelectFragment();
             getSupportFragmentManager().beginTransaction().add(R.id.mainlayout,fragment).commit();
             isFragmentOn=true;
+        }
+        else {
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+            isFragmentOn = false;
         }
     }
 }
