@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/* @todo implementa l'adapter per la recicler view e testa la roba*/
+
 public class MainActivity extends AppCompatActivity {
 
     private RelativeLayout btnt,btnl,btnr;
