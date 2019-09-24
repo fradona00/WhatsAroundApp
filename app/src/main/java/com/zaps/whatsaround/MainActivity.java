@@ -3,6 +3,7 @@ package com.zaps.whatsaround;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Canvas;
@@ -19,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /* @todo implementa l'adapter per la recicler view e testa la roba*/
 
@@ -50,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
 
     }
 

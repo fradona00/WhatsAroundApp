@@ -1,5 +1,6 @@
 package com.zaps.whatsaround;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//@todo modificare l'oggetto rowlayout.xml aggiungendo 5 items cosi non fa casini con l'oggetto Inflater
+
 public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapter.ViewHolder> {
 
     private ArrayList<ListItem> listdata;
@@ -19,7 +22,7 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
     private LinearLayout rowLayout;
     private View listrowView;
     private LayoutInflater rowInflater;
-    private ViewGroup rowView;
+    private ViewGroup rowViewGroup;
 
     // RecyclerView recyclerView;
     public FragmentListAdapter(ArrayList<ListItem> listdata) {
@@ -30,14 +33,13 @@ public class FragmentListAdapter extends RecyclerView.Adapter<FragmentListAdapte
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         if (objCount==0 || objCount % 5 == 0)
         {
-            rowLayout=new LinearLayout(parent.getContext());
-            rowLayout.setOrientation(LinearLayout.HORIZONTAL);
             listrowView = layoutInflater.inflate(R.layout.rowlayout, parent, false);
-            rowView= (ViewGroup) parent.getChildAt(rowCount);
-            rowInflater=LayoutInflater.from(parent.getChildAt(rowCount).getContext());
+            rowViewGroup= (ViewGroup) listrowView;
+            rowInflater=LayoutInflater.from(listrowView.getContext());
             rowCount++;
+            Log.d("ROWCOUNT",String.valueOf(rowCount));
         }
-        View listItem= layoutInflater.inflate(R.layout.placeobj, rowView, false);
+        View listItem= layoutInflater.inflate(R.layout.placeobj, rowViewGroup, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         objCount++;
         return viewHolder;
