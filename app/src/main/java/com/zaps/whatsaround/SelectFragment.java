@@ -44,19 +44,28 @@ public class SelectFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ArrayList<ListItem> items=new ArrayList<>();
-        items.add(new ListItem(R.drawable.airport, "Airport"));
-        items.add(new ListItem(R.drawable.bank, "Bank"));
-        items.add(new ListItem(R.drawable.hospital, "Hospital"));
-        items.add(new ListItem(R.drawable.hotel, "Hotel"));
-        /*items.add(new ListItem(R.drawable.airport, "Airport"));
-        items.add(new ListItem(R.drawable.bank, "Bank"));
-        items.add(new ListItem(R.drawable.hospital, "Hospital"));
-        items.add(new ListItem(R.drawable.hotel, "Hotel"));
-        items.add(new ListItem(R.drawable.airport, "Airport"));
-        items.add(new ListItem(R.drawable.bank, "Bank"));
-        items.add(new ListItem(R.drawable.hospital, "Hospital"));
-        items.add(new ListItem(R.drawable.hotel, "Hotel"));*/
+        ArrayList<ListItem[]> items=new ArrayList<>();
+        items.add(new ListItem[]{new ListItem(R.drawable.airport, "Airport"),
+                new ListItem(R.drawable.bank, "Bank"),
+                new ListItem(R.drawable.hotel, "Hotel"),
+                new ListItem(R.drawable.hospital, "Hospital"),
+                new ListItem(R.drawable.bag, "Shopping")});
+        items.add(new ListItem[]{new ListItem(R.drawable.benz, "Gas Station"),
+                new ListItem(R.drawable.ev, "EV"),
+                new ListItem(R.drawable.library, "Library"),
+                new ListItem(R.drawable.mail, "Post office"),
+                new ListItem(R.drawable.parking, "Parking")});
+        items.add(new ListItem[]{new ListItem(R.drawable.cafe, "Cafe"),
+                new ListItem(R.drawable.cinema, "Cinema"),
+                new ListItem(R.drawable.municipal, "Municipal"),
+                new ListItem(R.drawable.restaurant, "Restaurant"),
+                new ListItem(R.drawable.camera, "Places")});
+        items.add(new ListItem[]{new ListItem(R.drawable.pharmacy, "Pharmacy"),
+                new ListItem(R.drawable.school, "School"),
+                new ListItem(R.drawable.train, "Train Station"),
+                new ListItem(R.drawable.municipal, "Municipal"),
+                new ListItem(R.drawable.saleshop, "Shopping Center"),});
+
 
         FragmentListAdapter adapter=new FragmentListAdapter(items);
 
@@ -66,5 +75,7 @@ public class SelectFragment extends Fragment {
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         rcv.setLayoutManager(manager);
         rcv.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 }

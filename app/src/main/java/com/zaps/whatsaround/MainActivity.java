@@ -23,7 +23,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/* @todo implementa l'adapter per la recicler view e testa la roba*/
+/* @todo implementare la funzione veloce dei bottoni grossi col plusbutton
+   @todo implementare la modifica delle preferenze sui bottoni veloci*/
+
 
 public class MainActivity extends AppCompatActivity {
 
